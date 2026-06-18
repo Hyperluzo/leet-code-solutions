@@ -1,22 +1,20 @@
 class Solution {
 public:
     int findMaxConsecutiveOnes(vector<int>& nums) {
-         int count = 0;
-        int maxCount = 0;
+           int count = 0;
+        int ans = 0;
 
-        for(int num : nums) {
+        for(int i = 0; i < nums.size(); i++) {
 
-            if(num == 1) {
+            if(nums[i] == 1)
                 count++;
-                maxCount = max(maxCount, count);
-            }
-            else {
+            else
                 count = 0;
-            }
+
+            ans = max(ans, count);
         }
 
-        return maxCount;
+        return ans;
     }
-        
     
 };
